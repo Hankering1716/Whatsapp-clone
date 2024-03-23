@@ -1,0 +1,35 @@
+#messagesPlace {
+   margin-left:30%;
+   width: 70%;
+
+}
+
+#sectionDiv {
+    max-width:90%;
+}
+
+#conversationSpeaker{
+    max-height: 100%;
+    word-wrap: break-word;
+
+    vertical-align: middle;
+
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    -o-user-select: auto;
+    user-select: auto;
+    overflow: hidden;
+}
+
+.messageLeft {
+    float:left;
+    border-radius: 15px;
+    background-color: rgba(57, 192, 237,.2);
+  
+}
+
+.messageRight {
+    float:right;
+}

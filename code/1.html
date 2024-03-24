@@ -46,28 +46,53 @@
                 f
             </div> -->
   
-            <nav id="navId">
-                <div id="sectionDiv" class="container-fluid" style="position:fixed;">
+            <nav id="navId" style="">
+                <div id="sectionDiv" class="container-fluid" style="position:fixed;pointer-events: none;">
                     <div class="row flex">
-                        <div class="col-4 col-md-4 px-0 bg-success opacity-">
+                        <div class="col-4 col-md-3 px-0 bg-success opacity-">
                             <div class="d-flex flex-column  align-items-start px-3 pt-2 text-white min-vh-100">
                                 <a href="Whatsapp" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                                    <span class="ms-1 d-inline d-sm-inline bi bi-whatsapp"> Whatsapp </span>
-                                </a>
+                                    <span class="ms-1 d-inline d-sm-inline bi bi-whatsapp" style=""> Whatsapp </span>
+                                   
+                                </a> 
                                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                                     <li class="nav-item" >
                                         
                                             <i class="fs-4 bi bi-chat" ></i> <span class="d-sm-inline ">MESSAGES</span>
-                                            <hr class="w-100">
+                                            <hr class="" id="hrNav">
                                    
-                                    </li>
-                                    <li class="nav-item mask" style="">
-                                        <a href="#" onclick="showMessage1()" class="nav-link align-middle px-0 border text-dark w-100">
+                                    </li>      
+                                    <div id="newMessages">
+                                        <li class="nav-item mask" style="">
+                                        <a href="#"  class="nav-link align-middle px-0 border text-dark">
                                             <img src="images/Image1NAV.jfif" class="rounded" width="30" height="30"> Hi! how you are?
-                                        </a>
+                                        </a> 
+                                        </li>
+                                        <li class="nav-item mt-3">
+                                            <a href="" onclick="Display()" class="nav-link align-middle px-0 border text-dark">
+                                                <img src="images/image2NAV.jfif" width="30" height="30" class="rounded"> Whats up?
+                                            </a> 
+                                        </li> 
+                                        <hr> </div> 
+                                    
+                                    <li class="nav-item mt-5 d-inline d-relative" style="width:100%;">
+                                        <div class="dropdown" style="pointer-events: auto;">
+                                            <button id="dropdownMenuLink" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <p id="User" class="d-inline" >John Doe</p>
+                                                <img src="images/AvatarImage.jfif" width="40" class="rounded">
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <p class="dropdown-item" id="User"><img src="images/AvatarImage.jfif" width="40" class="rounded"> John Doe</p>
+                                                <a class="dropdown-item"><span class="bi bi-gear-fill"></span> Settings</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#">Log Out</a>
+                                            </div>
+                                        </div>
+                                        
+                                    
                                     </li>
                                 </ul>
-                               
+                                
                                 <hr>
                             </div>
  
@@ -82,9 +107,13 @@
                    <img src="images/Image1NAV.jfif" width="40" height="30"> Matthew Audio
                 </div>
                 <div id="conversationSpeaker"style="background: rgba(70, 121, 78, 0.354);" >
-                    <div class="d-flex flex-row justify-content-start mb-4 text-dark">
-
-                        <div class="p-3 m-4 border border-bg-primary" style="border-radius: 15px; background-color: #fbfbfb;">
+                    <div class="d-flex flex-row  mb-4 text-dark">
+                     
+              
+                        <div id="Date" class="text-white">Today</div>  
+                        <br>
+                        <hr class="w-100 p-3">
+                        <div class="p-3 m-4 border border-bg-primary" style="border-radius: 15px; background-color: rgb(49, 49, 175);">
                             <p class="small mb-1">Hey, how's it going?</p>
                         </div>
 
@@ -100,7 +129,7 @@
 
                     <div class="d-flex flex-row justify-content-start mb-4 text-dark">
 
-                        <div class="p-3 m-4 border border-bg-primary" style="border-radius: 15px; background-color: #fbfbfb;">
+                        <div class="p-3 m-4 border border-bg-primary" style="border-radius: 15px; background-color: rgb(49, 49, 175);">
                             <p class="small mb-1">Same here, winter seems to linger forever. Any plans for the weekend?</p>
                         </div>
 
@@ -117,23 +146,29 @@
             
                     <div class="d-flex flex-row justify-content-start mb-4 text-dark">
 
-                        <div class="p-3 m-4 border border-bg-primary" style="border-radius: 15px; background-color: #fbfbfb;">
+                        <div  class="senderLeft p-3 m-4 border border-bg-primary" style="border-radius: 15px; background-color: rgb(49, 49, 175);">
                             <p class="small mb-1"> Probably hit the gym and maybe grab dinner with some friends. Speaking of which, any good book recommendations?</p>
                         </div>
-
                     </div>
+
                     <div class="d-flex flex-row justify-content-end mb-4 text-dark">
                        
-                        <div class="p-3 m-4 border border-bg-primary" style="border-radius: 15px; background-color: #fbfbfb;">
+                        <div class="p-3 m-4 border " style="border-radius: 15px; background-color:white">
                             <p class="small mb-1">Person 1: I'm open to anything really, but I lean towards historical fiction. Thanks for the recommendation!</p>
                         </div>
 
                         <img src="images/Image1NAV.jfif" class="m-4"alt="Matthew avatar" style="width:45px;height:100%;">
                     </div>
-                    
-                  </div>
-                </div>
+
+                  </div> 
+                </div>   
             </div>
+
+            <div class="input-group">
+                <input class="" id="inputSender">
+                <button class="btn btn-primary" onclick="sendMessage()">></button>
+            </div>
+
 
 
  

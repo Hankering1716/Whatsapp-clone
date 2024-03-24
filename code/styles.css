@@ -14,22 +14,23 @@
 
     vertical-align: middle;
 
-    -webkit-user-select: auto;
-    -khtml-user-select: auto;
-    -moz-user-select: auto;
-    -ms-user-select: auto;
-    -o-user-select: auto;
-    user-select: auto;
-    overflow: hidden;
 }
 
-.messageLeft {
-    float:left;
-    border-radius: 15px;
-    background-color: rgba(57, 192, 237,.2);
-  
+a {
+    pointer-events: auto;
+}
+.dropdown:hover{
+    cursor: pointer;
 }
 
-.messageRight {
-    float:right;
+#hrNav {
+margin-left:0;
+margin-right: 0;
 }
+
+#newMessages {
+    max-width: 200px;
+    cursor:n-resize;
+
+}
+

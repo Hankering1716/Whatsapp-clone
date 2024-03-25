@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 #messagesPlace {
    margin-left:30%;
    width: 70%;
@@ -32,5 +36,13 @@ margin-right: 0;
     max-width: 200px;
     cursor:n-resize;
 
+}
+
+body {
+    overflow-x:hidden;
+}
+
+#file::-webkit-file-upload-button {
+    display: none;
 }
 

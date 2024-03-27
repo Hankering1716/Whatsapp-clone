@@ -39,8 +39,10 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+        
     </head>    
-    <body onload="window.scroll(0,500)">
+    <body onload="window.scroll(0,10000000)">
 
             <!-- <div class="position-absolute top-20 start-1" style="background-color: bisque;width:100%">
                 f
@@ -164,10 +166,21 @@
                   </div> 
                 </div>   
             </div>
-
+       
+            <div style="margin-left:31%;">
+                <img id="imagePreview" alt="your image" width="50" height="30">
+            </div>
+            <br>
             <div class="input-group" style="margin-left:31%;">
-                <input type="file" accept=".jpg,.png,.jfif"   style="width: 5%;"name="image" id="file" onchange="loadImage()" class="btn btn-primary  bi bi-image" >
-                <input class="w-50" id="inputSender" >
+                
+                <input type="file" multiple accept=".jpg,.png,.jfif"  id="file-input"   name="image"
+                onchange="document.getElementById('imagePreview').src = window.URL.createObjectURL(this.files[0])" class="btn btn-primary bi-image">
+                <img id="imagePreview">
+               
+                <label  for="file-input" class="btn btn-primary">
+                    <span class="bi bi-image"></span>
+                </label>
+                <input class="w-50" id="inputSender" placeholder="Send a message...">
                 <button class="btn btn-primary" onclick="sendMessage()">></button>
             </div>
 

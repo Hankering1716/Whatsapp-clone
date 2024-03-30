@@ -57,3 +57,30 @@ body {
     border: 1px solid black;
     border-radius: 5%;
 }
+#color {
+    color: rgba(70, 121, 78, 0.354);
+}
+
+@media only screen and (max-width:600px) {
+#navId {
+    display: none;
+}
+
+
+#hiddenComputers {
+    display: block;
+}
+
+#messagesPlace {
+    margin-left:0%;
+}
+
+#groupInput {
+    margin-left:0%;
+}
+
+#file-input{
+    margin-left:0%;
+}
+
+}

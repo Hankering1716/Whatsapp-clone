@@ -1,24 +1,51 @@
+function sendImage() {
+    var imgPreview = document.getElementById("imagePreview").src;
+    var imgSrc =   `<img src=${imgPreview} width="300" height="200"`
+    document.getElementById("conversationSpeaker").innerHTML += `
+    <div class="d-flex flex-row  p-3 m-4  border border-bg-primary text-white" style="border-radius: 15px; background-color: rgb(49, 49, 175);">
+    <p class="small mb-1"> <br> ${imgSrc} </p>
+        </div>` ;   
+        document.getElementById("imagePreview").style.display = "none";
+        document.getElementById("sendImageButton").style.display = "none";
+        document.getElementById(`deleteImageButton`).style.display = 'none'
+}
+
+function deleteImage() {
+    document.getElementById("imagePreview").src = "none"
+    document.getElementById("imagePreview").style.display = "none";
+    document.getElementById("sendImageButton").style.display = "none";
+    document.getElementById(`deleteImageButton`).style.display = 'none'
+}
+    
+function show() {
+    document.getElementById(`sendImageButton`).style.display = 'block'
+}
+
+
 function sendMessage() {
     if(document.getElementById('inputSender').value == "") {
         return  document.getElementById('conversationSpeaker').innerHTML += '';
     } 
 
 
-    const imgPreview = document.getElementById("imagePreview").src;
+    var imgPreview = document.getElementById("imagePreview").src;
 
-    var img =  `<img height="200" width="300" src="${imgPreview}">`
+    var img =  `<img height="200" width="300" src="${imgPreview}" `
+
 
 
     
     document.getElementById('conversationSpeaker').innerHTML += `                        
         <div class="d-flex flex-row  p-3 m-4  border border-bg-primary text-white" style="border-radius: 15px; background-color: rgb(49, 49, 175);">
               <p class="small mb-1">${document.getElementById('inputSender').value}  <br>  </p>
-        </div>`;
+        </div>`;    document.getElementById('inputSender').value = "";
+    
+ 
 
 
     window.scrollTo(0, document.body.scrollHeight);
 
-    document.getElementById('inputSender').value = "";
+ 
 
 }
 
@@ -140,11 +167,4 @@ function Display1() {
 
     
     document.getElementById("nameSpeaker").innerHTML = `${image} John Doe`
-}
-
-function sendImage() {
-    document.getElementById("imagePreview").style.display = "block";
-
-
-    
 }

@@ -42,14 +42,14 @@
     
         
     </head>    
-    <body onload="window.scroll(0,10000000)">
+    <body onload="window.scroll(0,document.body.scrollHeight)">
 
             <!-- <div class="position-absolute top-20 start-1" style="background-color: bisque;width:100%">
                 f
             </div> -->
   
             <nav id="navId" style="">
-                <div id="sectionDiv" class="container-fluid" style="position:fixed;pointer-events: none;">
+                <div id="sectionDiv" class="container-fluid" style="position:fixed;">
                     <div class="row flex">
                         <div class="col-4 col-md-3 px-0 bg-success opacity-">
                             <div class="d-flex flex-column  align-items-start px-3 pt-2 text-white min-vh-100">
@@ -57,22 +57,26 @@
                                     <span class="ms-1 d-inline d-sm-inline bi bi-whatsapp" style=""> Whatsapp </span>
                                    
                                 </a> 
-                                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                                    <li class="nav-item" >
-                                        
-                                            <i class="fs-4 bi bi-chat" ></i> <span class="d-sm-inline ">MESSAGES</span>
-                                            <hr class="" id="hrNav">
-                                   
-                                    </li>      
+                           
+
+                                    <div>
+                                        <span class="bi bi-chat ms-1 d-inline d-sm-inline bi"> Messages</span>
+                                       
+                                    </div>    
+                                    <hr class="w-100">
+                                           
+                                    <!-- d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none -->
+                                    
+                                <ul class="bi  ms-1 d-inline d-sm-inline bi nav" id="menu"> 
                                     <div id="newMessages">
-                                        <li class="nav-item mask" style="">
-                                        <a href="#"  class="nav-link align-middle px-0 border text-dark">
-                                            <img src="images/Image1NAV.jfif" class="rounded" width="30" height="30"> Hi! how you are?
+                                        <li class="nav-item" style="">
+                                        <a onclick="Display()" class="border nav-link align-middle px-0  text-dark bi bi-people ms-1 d-inline  bi" style="cursor:pointer;">
+                                            <img src="images/Image1NAV.jfif" class="rounded " width="30" height="30" > Matthew Audio
                                         </a> 
                                         </li>
                                         <li class="nav-item mt-3">
-                                            <a href="" onclick="Display()" class="nav-link align-middle px-0 border text-dark">
-                                                <img src="images/image2NAV.jfif" width="30" height="30" class="rounded"> Whats up?
+                                            <a  onclick="Display1()" class=" border nav-link align-middle  bi bi-people px-0  text-dark" style="cursor:pointer">
+                                                <img src="images/image2NAV.jfif" width="30" height="30" class="rounded"> John Doe
                                             </a> 
                                         </li> 
                                         <hr> </div> 
@@ -106,9 +110,9 @@
 
             <div class="container-fluid" id="messagesPlace" >
                 <div id="nameSpeaker">
-                   <img src="images/Image1NAV.jfif" width="40" height="30"> Matthew Audio
+                   <img src="images/Image1NAV.jfif"  width="40" height="30"> Matthew Audio
                 </div>
-                <div id="conversationSpeaker"style="background: rgba(70, 121, 78, 0.354);" >
+                <div id="conversationSpeaker"  style="background: rgba(70, 121, 78, 0.354);" >
                     <div class="mb-4 text-dark">
                      
               
@@ -168,20 +172,39 @@
             </div>
        
             <div style="margin-left:31%;">
-                <img id="imagePreview" alt="your image" width="50" height="30">
+                <img id="imagePreview" alt="" style="display: none;" width="300" height="200" >
+                <button id="sendImageButton" style="display: none;" class="btn btn-primary" onclick="sendImage()">Send image</button>
+                <button  id="deleteImageButton" style="display: none;" class="btn btn-danger" onclick="deleteImage()">Delete image</button>
             </div>
             <br>
             <div class="input-group" style="margin-left:31%;">
                 
-                <input type="file" multiple accept=".jpg,.png,.jfif"  id="file-input"   name="image"
-                onchange="document.getElementById('imagePreview').src = window.URL.createObjectURL(this.files[0])" class="btn btn-primary bi-image">
-                <img id="imagePreview">
+                <input type="file" multiple accept=".jpg,.png,.jfif"  id="file-input"   
+                name="image" 
+                onclick="document.getElementById(`imagePreview`).style.display = 'block'; 
+                document.getElementById(`sendImageButton`).style.display = 'block';
+                document.getElementById(`deleteImageButton`).style.display = 'inline-block';
+                "
+    
+                onchange="document.getElementById('imagePreview').src = window.URL.createObjectURL(this.files[0])"
+                class="btn btn-primary bi-image">
+                <img id="imagePreview" style="">
                
                 <label  for="file-input" class="btn btn-primary">
                     <span class="bi bi-image"></span>
                 </label>
                 <input class="w-50" id="inputSender" placeholder="Send a message...">
                 <button class="btn btn-primary" onclick="sendMessage()">></button>
+
+
+                
+            </div>
+            <div id="hiddenComputers" style="display: none;">
+            
+          <button id="dropdownMenuLink" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <p id="User" class="d-inline" >John Doe</p>
+                <img src="images/AvatarImage.jfif" width="40" class="rounded">
+            </button>
             </div>
 
 

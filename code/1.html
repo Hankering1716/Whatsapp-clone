@@ -48,8 +48,9 @@
                 f
             </div> -->
   
-            <nav id="navId" style="">
-                <div id="sectionDiv" class="container-fluid" style="position:fixed;">
+           <div id="everything">
+                <nav id="navId" style="">
+                <div id="sectionDiv" class="container-fluid" style="position:fixed;pointer-events: none;">
                     <div class="row flex">
                         <div class="col-4 col-md-3 px-0 bg-success opacity-">
                             <div class="d-flex flex-column  align-items-start px-3 pt-2 text-white min-vh-100">
@@ -83,7 +84,7 @@
                                     
                                     <li class="nav-item mt-5 d-inline d-relative" style="width:100%;">
                                         <div class="dropdown" style="pointer-events: auto;">
-                                            <button id="dropdownMenuLink" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button  style="cursor:pointer;"id="dropdownMenuLink" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <p id="User" class="d-inline" >John Doe</p>
                                                 <img src="images/AvatarImage.jfif" width="40" class="rounded">
                                             </button>
@@ -91,7 +92,7 @@
                                                 <p class="dropdown-item" id="User"><img src="images/AvatarImage.jfif" width="40" class="rounded"> John Doe</p>
                                                 <a class="dropdown-item"><span class="bi bi-gear-fill"></span> Settings</a>
                                                 <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#">Log Out</a>
+                                                <a class="dropdown-item" onclick="LogOut()">Log Out</a>
                                             </div>
                                         </div>
                                         
@@ -172,18 +173,23 @@
             </div>
        
             <div style="margin-left:31%;">
-                <img id="imagePreview" alt="" style="display: none;" width="300" height="200" >
-                <button id="sendImageButton" style="display: none;" class="btn btn-primary" onclick="sendImage()">Send image</button>
-                <button  id="deleteImageButton" style="display: none;" class="btn btn-danger" onclick="deleteImage()">Delete image</button>
+                <img id="imagePreview" alt="" style="display: none;" width="350" height="200" >
+                <div class="btn-group">
+                    <button id="sendImageButton" style="display: none;" class="btn btn-primary" onclick="sendImage()">Send image</button>
+                    <button  id="deleteImageButton" style="display: none;" class="btn btn-danger" onclick="deleteImage()">Delete image</button>
+                    <br>
+                    <button id="sendWithText" style="display:none" class="btn btn-success" onclick="sendWithText()">Send With Text</button>
+                </div>
             </div>
             <br>
-            <div class="input-group" style="margin-left:31%;">
+            <div id="inputGroup" class="input-group" style="margin-left:31%;">
                 
                 <input type="file" multiple accept=".jpg,.png,.jfif"  id="file-input"   
                 name="image" 
                 onclick="document.getElementById(`imagePreview`).style.display = 'block'; 
                 document.getElementById(`sendImageButton`).style.display = 'block';
-                document.getElementById(`deleteImageButton`).style.display = 'inline-block';
+                document.getElementById(`deleteImageButton`).style.display = 'block';
+                document.getElementById('sendWithText').style.display = 'block';
                 "
     
                 onchange="document.getElementById('imagePreview').src = window.URL.createObjectURL(this.files[0])"
@@ -193,20 +199,47 @@
                 <label  for="file-input" class="btn btn-primary">
                     <span class="bi bi-image"></span>
                 </label>
+                
                 <input class="w-50" id="inputSender" placeholder="Send a message...">
                 <button class="btn btn-primary" onclick="sendMessage()">></button>
-
-
-                
             </div>
             <div id="hiddenComputers" style="display: none;">
             
-          <button id="dropdownMenuLink" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <p id="User" class="d-inline" >John Doe</p>
-                <img src="images/AvatarImage.jfif" width="40" class="rounded">
-            </button>
+                <button id="dropdownMenuLink" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <p id="User" class="d-inline" >John Doe</p>
+                    <img src="images/AvatarImage.jfif" width="40" class="rounded">
+                 </button>
+            
             </div>
+        </div>
 
+
+        <div id="login" style="display:none;">
+            <form>
+                <div class="form-outline mb-4">
+                    <input type="email" id="emailLabel" class="form-control"/>
+                    <label class="form-label" for="emailLabel">Email address</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="password" id="passwordLabel" class="form-control">
+                    <label class="form-label" for="passwordLabel">Password</label>
+                </div>
+                <div class="row mb-4">
+                    <div class="col d-flex justify-content-center">
+
+                    </div>
+                        <div class="input-group">
+                            <input class="form-check-input " style="margin-left:0%;"type="checkbox" value="" id="rememberMe"> 
+
+                            <label class="form-check-label" for="rememberMe"><span> </span>  Remember me</label>
+                        </div>
+                </div>
+
+                <div class="col">
+                    <a href="" class="">Forgot password?</a>
+                </div>
+            </form>
+        </div>
 
 
  

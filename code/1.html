@@ -85,11 +85,11 @@
                                     <li class="nav-item mt-5 d-inline d-relative" style="width:100%;">
                                         <div class="dropdown" style="pointer-events: auto;">
                                             <button  style="cursor:pointer;"id="dropdownMenuLink" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <p id="User" class="d-inline" >John Doe</p>
+                                                <p  class="User d-inline">John Doe</p>
                                                 <img src="images/AvatarImage.jfif" width="40" class="rounded">
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <p class="dropdown-item" id="User"><img src="images/AvatarImage.jfif" width="40" class="rounded"> John Doe</p>
+                                                <p class="User1 dropdown-item" id="User">John Doe  <img src="images/AvatarImage.jfif" width="40" class="rounded"> </p>
                                                 <a class="dropdown-item"><span class="bi bi-gear-fill"></span> Settings</a>
                                                 <div class="dropdown-divider"></div>
                                                 <a class="dropdown-item" onclick="LogOut()">Log Out</a>
@@ -215,10 +215,10 @@
 
 
         <div id="login" style="display:none;">
-            <form>
+            <form id="loginForm">
                 <div class="form-outline mb-4">
-                    <input type="email" id="emailLabel" class="form-control"/>
-                    <label class="form-label" for="emailLabel">Email address</label>
+                    <input type="" id="emailLabel" class="form-control" maxlength="32"/>
+                    <label class="form-label" for="emailLabel" >Login</label>
                 </div>
                 <div class="form-outline mb-4">
                     <input type="password" id="passwordLabel" class="form-control">
@@ -232,12 +232,40 @@
                             <input class="form-check-input " style="margin-left:0%;"type="checkbox" value="" id="rememberMe"> 
 
                             <label class="form-check-label" for="rememberMe"><span> </span>  Remember me</label>
+                            <br>
+                            <button type="submit" id="submitButton"class="btn btn-primary" style="" onclick="login()">Login</button>
                         </div>
-                </div>
+                        
+               
+                        <div class="col">
+                            <a href="" class="">Forgot password?</a>
+                        </div>
+                    </div>
+     
+                    <br>
+                    <div class="text-center">
+                        <p>Not a member? <a href="#!">Register</a></p>
+                        <p>or sign up with:</p>
+                        <div class="input-group text-center">
+                            <button type="button" class="btn btn-link btn-floating mx-1">
+                                <i class="bi bi-facebook"></i>
+                              </button>
+                              
+                              <button type="button" class="btn btn-link btn-floating mx-1">
+                                <i class="bi bi-google"></i>
+                              </button>
+                          
+                              <button type="button" class="btn btn-link btn-floating mx-1">
+                                <i class="bi bi-twitter"></i>
+                              </button>
+                          
+                              <button type="button" class="btn btn-link btn-floating mx-1">
+                                <i class="bi bi-github"></i>
+                              </button>
+                        </div>
+                      </div>
 
-                <div class="col">
-                    <a href="" class="">Forgot password?</a>
-                </div>
+         
             </form>
         </div>
 

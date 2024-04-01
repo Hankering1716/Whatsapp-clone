@@ -8,6 +8,7 @@ function sendImage() {
         document.getElementById("imagePreview").style.display = "none";
         document.getElementById("sendImageButton").style.display = "none";
         document.getElementById(`deleteImageButton`).style.display = 'none'
+        document.getElementById("sendWithText").style.display = "none";
 }
 
 function deleteImage() {
@@ -15,6 +16,7 @@ function deleteImage() {
     document.getElementById("imagePreview").style.display = "none";
     document.getElementById("sendImageButton").style.display = "none";
     document.getElementById(`deleteImageButton`).style.display = 'none'
+    document.getElementById("sendWithText").style.display = "none";
 }
     
 function show() {
@@ -167,4 +169,51 @@ function Display1() {
 
     
     document.getElementById("nameSpeaker").innerHTML = `${image} John Doe`
+}
+function LogOut() {
+    document.getElementById('everything').style.display = 'none';
+    document.getElementById('inputGroup').style.display = 'none'
+    document.getElementById("login").style.display = 'block'
+    document.getElementById('loginForm').style.display = '';
+}
+
+
+function sendWithText() {
+    var imgPreview = document.getElementById("imagePreview").src;
+    var imgSrc =   `<img src=${imgPreview} width="300" height="200"`
+
+
+    document.getElementById('conversationSpeaker').innerHTML += 
+    `<div class="d-flex flex-row  p-3 m-4  border border-bg-primary text-white" style="border-radius: 15px;color:white; background-color: rgb(49, 49, 175);">
+          <p class="small mb-1">${document.getElementById("inputSender").value}</p>
+          <br>
+          ${imgSrc}
+    </div> `;
+    document.getElementById("imagePreview").src = "";
+
+
+    document.getElementById("imagePreview").style.display = "none";
+    document.getElementById("sendImageButton").style.display = "none";
+    document.getElementById(`deleteImageButton`).style.display = 'none'
+    document.getElementById("sendWithText").style.display = "none";
+
+}
+
+const form = document.getElementById('loginForm');
+const usernameInput = document.getElementById('emailLabel');
+const passwordInput = document.getElementById('passwordLabel');
+const submitButton = document.getElementById('submitButton');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Add your login logic here
+    // For now, we'll just log the inputs to the console
+    console.log(`Username: ${usernameInput.value}`);
+    console.log(`Password: ${passwordInput.value}`);
+
+});
+function login() {
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('everything').style.display = 'block';
+    document.getElementById('inputGroup').style.display = '';
+    document.querySelectorAll(".User").innerHTML = `${document.getElementById("emailLabel").value}`
 }

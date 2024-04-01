@@ -83,4 +83,17 @@ body {
     margin-left:0%;
 }
 
+#hiddenComputers {
+    display: block;
+}
+
+}
+
+button {
+    content: " ";
+    position:absolute;
+}
+
+#User {
+    white-space: nowrap;
 }

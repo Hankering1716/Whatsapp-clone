@@ -215,5 +215,7 @@ function login() {
     document.getElementById('loginForm').style.display = 'none';
     document.getElementById('everything').style.display = 'block';
     document.getElementById('inputGroup').style.display = '';
-    document.querySelectorAll(".User").innerHTML = `${document.getElementById("emailLabel").value}`
+    document.getElementById("User").innerHTML = `${document.getElementById("emailLabel").value}`
+    document.getElementById("User1").innerHTML = `${document.getElementById("emailLabel").value}`
 }
+

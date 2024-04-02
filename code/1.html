@@ -85,12 +85,12 @@
                                     <li class="nav-item mt-5 d-inline d-relative" style="width:100%;">
                                         <div class="dropdown" style="pointer-events: auto;">
                                             <button  style="cursor:pointer;"id="dropdownMenuLink" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <p  class="User d-inline">John Doe</p>
+                                                <p id="User" class="User d-inline">John Doe</p>
                                                 <img src="images/AvatarImage.jfif" width="40" class="rounded">
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <p class="User1 dropdown-item" id="User">John Doe  <img src="images/AvatarImage.jfif" width="40" class="rounded"> </p>
-                                                <a class="dropdown-item"><span class="bi bi-gear-fill"></span> Settings</a>
+                                                <p id="User1" class="dropdown-item" id="User">John Doe   </p>
+                                                <a class="dropdown-item" onclick="settings()"> <span class="bi bi-gear-fill"></span> Settings</a>
                                                 <div class="dropdown-divider"></div>
                                                 <a class="dropdown-item" onclick="LogOut()">Log Out</a>
                                             </div>
@@ -203,12 +203,19 @@
                 <input class="w-50" id="inputSender" placeholder="Send a message...">
                 <button class="btn btn-primary" onclick="sendMessage()">></button>
             </div>
-            <div id="hiddenComputers" style="display: none;">
+            <div id="hiddenComputers1" >
             
-                <button id="dropdownMenuLink" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <p id="User" class="d-inline" >John Doe</p>
-                    <img src="images/AvatarImage.jfif" width="40" class="rounded">
-                 </button>
+                <div class="dropdown" style="pointer-events: auto;">
+                    <button  style="cursor:pointer;"id="dropdownMenuLink" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <p id="User" class="User d-inline">John Doe</p>
+                        <img src="images/AvatarImage.jfif" width="40" class="rounded">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <p id="User1" class="dropdown-item" id="User">John Doe   </p>
+                        <a class="dropdown-item" onclick="settings()"> <span class="bi bi-gear-fill"></span> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" onclick="LogOut()">Log Out</a>
+                    </div>
             
             </div>
         </div>

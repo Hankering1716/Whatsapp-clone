@@ -219,3 +219,8 @@ function login() {
     document.getElementById("User1").innerHTML = `${document.getElementById("emailLabel").value}`
 }
 
+
+
+function changeImage() {
+    document.getElementById("avatarImg").src = img.src.replace("_t", "_b");
+} 
